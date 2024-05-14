@@ -1,0 +1,25 @@
+
+#rodape
+{
+	overflow: hidden;
+	padding: 2em 0em;
+}
+
+#rodape p
+{
+	text-align: center;
+	font-size: 1em;
+	color: #000000 ; 
+}
+
+#rodape a
+{
+	text-decoration: none;
+	color: #000000 ; 
+}
+.centralizar
+{
+	overflow: hidden;
+	margin: 0em auto;
+	width: 1200px;
+}
