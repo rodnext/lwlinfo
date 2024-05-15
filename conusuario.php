@@ -28,6 +28,7 @@ include ('menus/menu_adm.php');
             $sql = "SELECT * from tblusuarios";
             $qry = mysqli_query($con,$sql);
             ?>
+          
             <br>
             <table class='table'>
             <thead>
@@ -66,6 +67,8 @@ include ('menus/menu_adm.php');
                   </tr>
                   </tbody>        
           <?php }  ?>
+          
+          
             </table>
         
     </div>
