@@ -64,9 +64,9 @@ if ($nome === false) {
         } else {
 
             //------------------SENHA--------------------
-
             function verificarSenhas($senha, $confsenha)
             {
+
                 if ($senha === $confsenha) {
                     return true;
                 } else {
@@ -75,10 +75,10 @@ if ($nome === false) {
             }
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $senha = $_POST["senha"];
-                $confsenha = $_POST["confsenha"];
-                if (verificarSenhas($senha, $confsenha)) {
+                $senha = md5($_POST["senha"]);
+                $confsenha = md5($_POST["confsenha"]);
 
+                if (verificarSenhas($senha, $confsenha)) {
 
 
                     $telefone = $_POST['telefone'];
@@ -135,9 +135,58 @@ if ($nome === false) {
                     echo "<script>alert('Senhas não conferem.')</script>";
                 }
             }
-            if ($qry) {
-                echo "Cadastrado com sucesso";
-                echo "<a href='login.php'>Continuar</a> - <a href='cadcliente.php'>Voltar</a>";
+            if ($qry) { 
+    ?>
+                <!DOCTYPE html>
+                <html lang="pt">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Cadastro Efetuado com Sucesso</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            text-align: center;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh; /* Para centralizar verticalmente */
+                        }
+                        .container {
+                            width: 300px;
+                        }
+                        h2 {
+                            color: green;
+                        }
+                        .btn {
+                            display: inline-block;
+                            padding: 10px 20px;
+                            margin: 10px;
+                            background-color: #4CAF50;
+                            color: white;
+                            text-decoration: none;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        }
+                        .btn:hover {
+                            background-color: #45a049;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <h2>Cadastro Efetuado com Sucesso!</h2>
+                        <p>O seu cadastro foi realizado com sucesso.</p>
+                        <a href="login.php" class="btn">Continuar</a>
+                        <a href="cadcliente.php" class="btn">Voltar</a>
+                    </div>
+                </body>
+                </html>
+                
+    <?php
+                //echo "Cadastrado com sucesso";
+                //echo "<a href='login.php'>Continuar</a> - <a href='cadcliente.php'>Voltar</a>";
             } else {
                 echo "Não Cadastrado<br>";
                 echo "Informe ao ADM - <a href='cadcliente.php'>Voltar</a>";

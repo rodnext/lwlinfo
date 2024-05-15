@@ -111,9 +111,13 @@ include('menus/menu_adm.php');
   
           <button type="submit" class="btn btn-dark">Cadastrar usuario</button>
   </form>   
+  
+<?php
+
+include('final.php');
+?>
             <?php //echo $_SESSION['voltarCadastro']; ?>
 </div>   
-
 
 
 

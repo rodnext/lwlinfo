@@ -38,3 +38,5 @@ if ((isset($_POST['txt_usuario'])) && (isset($_POST['txt_senha']))) {
    $_SESSION['loginErro'] = "Usuário ou senha inválido ";
    header("Location: login.php");
 }
+
+   //$senha = mysqli_real_escape_string($con, $_POST['txt_senha']);
